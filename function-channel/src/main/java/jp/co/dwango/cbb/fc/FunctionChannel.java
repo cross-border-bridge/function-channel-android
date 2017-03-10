@@ -189,7 +189,7 @@ public class FunctionChannel {
 	 */
 	public void bind(String id, Object instance) {
 		unbind(id);
-		Logger.d("binding: " + id + " -> " + instance.toString());
+		Logger.d("binding: " + id + " to " + instance.toString());
 		instances.put(id, instance);
 	}
 
@@ -206,7 +206,7 @@ public class FunctionChannel {
 	}
 
 	/**
-	 * native -> JS 方向のRPCを実行（引数+戻り値なし）
+	 * native → JS 方向のRPCを実行（引数+戻り値なし）
 	 *
 	 * @param id     インスタンス識別名
 	 * @param method メソッド名
@@ -216,7 +216,7 @@ public class FunctionChannel {
 	}
 
 	/**
-	 * native -> JS 方向のRPCを実行（戻り値なし）
+	 * native → JS 方向のRPCを実行（戻り値なし）
 	 *
 	 * @param id     インスタンス識別名
 	 * @param method メソッド名
@@ -227,7 +227,7 @@ public class FunctionChannel {
 	}
 
 	/**
-	 * native -> JS 方向のRPCを実行（戻り値あり）
+	 * native → JS 方向のRPCを実行（戻り値あり）
 	 *
 	 * @param id       インスタンス識別名
 	 * @param method   メソッド名
