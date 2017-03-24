@@ -354,7 +354,6 @@ public class FunctionChannelTest {
 		after();
 	}
 
-	/*
 	@Test
 	public void test_正常ケース_マルチスレッド() throws InterruptedException {
 		before();
@@ -383,5 +382,4 @@ public class FunctionChannelTest {
 		Assert.assertEquals(tryCount * threadCount, myClassJava.getCount());
 		after();
 	}
-	*/
 }
