@@ -114,6 +114,7 @@ public class FunctionChannel {
 					}
 				} catch (JSONException e) {
 					Logger.printStackTrace(e);
+					callback.send(new JSONArray().put(FunctionChannelProtocol.DC_ERR).put(FunctionChannelError.InvalidRequest));
 				}
 			}
 		});

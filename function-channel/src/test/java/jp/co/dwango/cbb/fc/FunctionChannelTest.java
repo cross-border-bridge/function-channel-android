@@ -322,7 +322,7 @@ public class FunctionChannelTest {
 
 			@Override
 			public void onError(ErrorType s) {
-				Assert.fail();
+				Assert.fail("ErrorType: " + s);
 			}
 		});
 		after();
@@ -346,11 +346,42 @@ public class FunctionChannelTest {
 
 			@Override
 			public void onError(ErrorType s) {
-				Assert.fail();
+				Assert.fail("ErrorType:" + s);
 			}
 		});
 		// カバレッジを上げるため一応PUSHも投げておく
 		dataChannel1.sendPush(new JSONArray().put(FunctionChannelProtocol.DC_EDO).put("result"));
 		after();
 	}
+
+	/*
+	@Test
+	public void test_正常ケース_マルチスレッド() throws InterruptedException {
+		before();
+		final int tryCount = 1000;
+		final int threadCount = 10;
+		Thread[] threads = new Thread[threadCount];
+		for (int i = 0; i < threadCount; i++) {
+			threads[i] = new Thread(new Runnable() {
+				@Override
+				public void run() {
+					for (int i = 0; i < tryCount; i++) {
+						functionChannel1.invoke("MyClassJava", "countUp", null, new FunctionChannelCallback() {
+							@Override
+							public void onResult(boolean isError, Object result) {
+								Assert.assertFalse(isError);
+							}
+						});
+					}
+				}
+			});
+			threads[i].start();
+		}
+		for (Thread t : threads) {
+			t.join();
+		}
+		Assert.assertEquals(tryCount * threadCount, myClassJava.getCount());
+		after();
+	}
+	*/
 }
