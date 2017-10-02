@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 		FunctionChannel.logging(true);
 
 		// DataBusを用いるWebViewを指定してインスタンス化
-		final DataBus dataBus = new WebViewDataBus(this, webView);
+		final WebViewDataBus dataBus = new WebViewDataBus(this, webView, true);
 
 		// DataChannelを作成
 		final DataChannel dataChannel = new DataChannel(dataBus);
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 		});
 
 		// WebView へコンテンツをロード
-		webView.loadDataWithBaseURL("", loadTextFromAssert("html/index.html"), "text/html", "UTF-8", null);
+		webView.loadDataWithBaseURL("", loadTextFromAssert("html/index.html").replace("$(WEB-VIEW-DATA-BUS)", dataBus.getInjectJavaScript()), "text/html", "UTF-8", null);
 	}
 
 	private String loadTextFromAssert(String path) {
