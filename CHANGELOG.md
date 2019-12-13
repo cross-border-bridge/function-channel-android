@@ -1,5 +1,8 @@
 # Change log
 
+## Version 2.0.5
+- data-channel-androidを2.0.6に更新
+
 ## Version 2.0.4
 - 依存する Gradle のバージョンを更新
 - DataChannelをVersion 2.0.5に更新
