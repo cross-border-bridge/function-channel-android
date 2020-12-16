@@ -13,7 +13,7 @@ FunctionChannel の Android用の実装を提供します。
 ### gradle
 ```
 dependencies {
-	compile 'jp.co.dwango.cbb:function-channel:2.0.5'
+	compile 'jp.co.dwango.cbb:function-channel:2.0.6'
 }
 ```
 

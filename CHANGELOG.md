@@ -1,5 +1,8 @@
 # Change log
 
+## Version 2.0.6
+- data-channel-androidを2.0.7に更新
+
 ## Version 2.0.5
 - data-channel-androidを2.0.6に更新
 
